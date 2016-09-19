@@ -1,0 +1,103 @@
+<div class="widgets" ng-controller="regional.Ctrl">
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="METRO" ba-panel-class="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-responsive">
+            <thead>
+            <tr>
+              <th class="table-id">#</th>
+              <th>WITEL</th>
+              <th>Average of TTR Rec</th>
+              <th>Count of TTR Rec</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in metroTableData">
+              <td class="table-id">{{$index + 1}}</td>
+              <td>{{item.witel}}</td>
+              <td>{{item.average_of_TTR_rec}}</td>
+              <td>{{item.count_of_ttr_rec}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="RADIO" ba-panel-class="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-responsive">
+            <thead>
+            <tr>
+              <th class="table-id">#</th>
+              <th>WITEL</th>
+              <th>Average of TTR Rec</th>
+              <th>Count of TTR Rec</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in radioTableData">
+              <td class="table-id">{{$index + 1}}</td>
+              <td>{{item.witel}}</td>
+              <td>{{item.average_of_TTR_rec}}</td>
+              <td>{{item.count_of_ttr_rec}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="SL DIGITAL" ba-panel-class="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-responsive">
+            <thead>
+            <tr>
+              <th class="table-id">#</th>
+              <th>WITEL</th>
+              <th>Average of TTR Rec</th>
+              <th>Count of TTR Rec</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in sldigitalTableData">
+              <td class="table-id">{{$index + 1}}</td>
+              <td>{{item.witel}}</td>
+              <td>{{item.average_of_TTR_rec}}</td>
+              <td>{{item.count_of_ttr_rec}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="EKSTRIM" ba-panel-class="with-scroll table-panel">
+        <div class="horizontal-scroll">
+          <table class="table table-responsive">
+            <thead>
+            <tr>
+              <th class="table-id">#</th>
+              <th>WITEL</th>
+              <th>Average of TTR Rec</th>
+              <th>Count of TTR Rec</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in ekstrimTableData">
+              <td class="table-id">{{$index + 1}}</td>
+              <td>{{item.witel}}</td>
+              <td>{{item.average_of_TTR_rec}}</td>
+              <td>{{item.count_of_ttr_rec}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="block row">
+  <div class="title"><h4>Upload File: </h4></div>
+  <h5>Jenis File harus berekstensi ".csv"</h5>
+  <div class="block right">
+    <ng-csv-import
+      class="import"
+      content="csv.content"
+      header="csv.header"
+      separator="csv.separator"
+      result="csv.result"
+      encoding="csv.encoding"
+      callback="csvCallback"></ng-csv-import>
+  </div>
+</div>
+
+<div class="block row"  ng-if="csv.result">
+  <div class="content" hljs source="toPrettyJSON(csv.result, 2)"></div>
+</div>

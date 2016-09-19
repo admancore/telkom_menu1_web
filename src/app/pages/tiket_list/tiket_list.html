@@ -1,0 +1,76 @@
+<div class="widgets">
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="TIKET" ba-panel-class="with-scroll">
+      <div class="horizontal-scroll" ng-if="tableInit == true">
+
+        <div class="form-group select-page-size-wrap ">
+          <label>rows
+            <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+            </select>
+          </label>
+        </div>
+
+        <table class="table" st-table="smartTableData">
+          <thead>
+          <tr class="sortable ">
+            <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+            <th st-sort="kode">Kode</th>
+            <th st-sort="fault_nb">Fault NB</th>
+            <th st-sort="witel">Witel</th>
+            <th st-sort="description">Description</th>
+            <th st-sort="product_name">Product Name</th>
+            <th st-sort="ttr_rec">TTR Rec</th>
+            <th st-sort="ekstrim">Ekstrim</th>
+            <th st-sort="mod_4jam">< / > 4 Jam</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><input st-search="kode" placeholder="Search kode" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="fault_nb" placeholder="Search Kode Fault NB" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="witel" placeholder="Search Witel" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="description" placeholder="Search Description" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="product_name" placeholder="Search Product Name" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="ttr_rec" placeholder="Search Product TTR Rec" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="ekstrim" placeholder="Search Product Ekstrim" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="mod_4jam" placeholder="Search < / > 4 Jam" class="input-sm form-control search-input" type="search"/>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in smartTableData">
+            <td>{{$index + 1}}</td>
+            <td>{{item.kode}}</td>
+            <td>{{item.fault_nb}}</td>
+            <td>{{item.witel}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.product_name}}</td>
+            <td>{{item.ttr_rec}}</td>
+            <td>{{item.ekstrim}}</td>
+            <td>{{item.mod_4jam}}</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="6" class="text-center">
+              <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>

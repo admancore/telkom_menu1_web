@@ -1,0 +1,97 @@
+<div class="widgets">
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="DAFTAR PELANGGAN" ba-panel-class="with-scroll">
+      <!-- div include-with-scope="app/pages/aku/table/smartTable.html"></div> -->
+
+      <!-- <div class="horizontal-scroll">
+        <table class="table table-condensed">
+          <thead>
+          <tr>
+            <th class="table-id">#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in smartTableData">
+            <td class="table-id">{{item.id}}</td>
+            <td>{{item.nama}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.username}}</td>
+            <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
+            <td><button class="status-button btn btn-xs btn-{{item.status}}">{{item.status}}</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div> -->
+
+
+
+      <div class="horizontal-scroll" ng-if="tableInit == true">
+
+        <div class="form-group select-page-size-wrap ">
+          <label>rows
+            <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+            </select>
+          </label>
+        </div>
+
+        <table class="table" st-table="smartTableData">
+          <thead>
+          <tr class="sortable ">
+            <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+            <th st-sort="nama">Nama</th>
+            <th st-sort="kode_rute">Kode Rute</th>
+            <th st-sort="golongan">Golongan</th>
+            <th st-sort="meteran_lalu">Meteran Lalu</th>
+            <th st-sort="meteran_sekarang">Meteran Sekarang</th>
+            <th st-sort="status_catat">Status Catat</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><input st-search="nama" placeholder="Search Nama" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="kode_rute" placeholder="Search Kode Rute" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="golongan" placeholder="Search Golongan" class="input-sm form-control search-input"
+                       type="search"/></th>
+            <th><input st-search="meteran_lalu" placeholder="Search Meteran Lalu" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="meteran_sekarang" placeholder="Search Meteran Sekarang" class="input-sm form-control search-input" type="search"/>
+            </th>
+            <th><input st-search="status_catat" placeholder="Search Status Catat" class="input-sm form-control search-input" type="search"/>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in smartTableData">
+            <td class="table-id">{{item.loka}}</td>
+            <td>{{item.nama}}</td>
+            <td>{{item.kode_rute}}</td>
+            <td>{{item.golongan}}</td>
+            <td>{{item.meteran_lalu}}</td>
+            <td>{{item.meteran_sekarang}}</td>
+            <td>{{item.status_catat > 0 ? 'tercatat' : 'belum tercatat'}}</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="6" class="text-center">
+              <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
